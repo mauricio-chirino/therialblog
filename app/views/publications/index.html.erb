@@ -1,0 +1,140 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Publications" %>
+
+<h1>Publications</h1>
+
+<div id="publications">
+  <% @publications.each do |publication| %>
+    <%= render publication %>
+    <p>
+      <%= link_to "Show this publication", publication %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New publication", new_publication_path %>
+
+
+
+
+
+
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Authors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Blog Posts Section -->
+      <div class="col-lg-8">
+        <!-- Dynamic Blog Post Example -->
+        <div class="card mb-4">
+          <img src="https://via.placeholder.com/750x300" class="card-img-top" alt="Post Image">
+          <div class="card-body">
+            <h2 class="card-title">Blog Post Title</h2>
+            <p class="card-text">Here goes the content of the blog post. It could be a summary or excerpt of the full post content.</p>
+            <p class="text-muted">
+              Posted by <a href="#">Author Name</a> in <a href="#">Category Name</a> | Tag: <span class="badge bg-secondary">#Tag</span> 
+            </p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Blog Post Loop (Example) -->
+        <!-- Repeat the above block for each post retrieved from the 'publications' table -->
+        
+        <!-- Pagination -->
+        <nav aria-label="Pagination">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Sidebar Section -->
+      <div class="col-lg-4">
+        <!-- Search Widget -->
+        <div class="card mb-4">
+          <div class="card-header">Search</div>
+          <div class="card-body">
+            <form>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <button class="btn btn-primary" type="button">Go!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card mb-4">
+          <div class="card-header">Categories</div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <!-- Dynamic Category Example -->
+              <li><a href="#">Category 1</a></li>
+              <li><a href="#">Category 2</a></li>
+              <li><a href="#">Category 3</a></li>
+              <!-- Loop categories from 'categories' table -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Authors Widget -->
+        <div class="card mb-4">
+          <div class="card-header">Authors</div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <!-- Dynamic Author Example -->
+              <li><a href="#">Author 1</a></li>
+              <li><a href="#">Author 2</a></li>
+              <!-- Loop authors from 'authors' table -->
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>&copy; 2024 - My Blog. All Rights Reserved.</small>
+    </div>
+  </footer>
